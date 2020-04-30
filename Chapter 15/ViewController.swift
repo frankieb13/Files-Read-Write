@@ -13,6 +13,7 @@ class ViewController: UIViewController {
     @IBOutlet weak var firstName: UITextField!
     @IBOutlet weak var lastName: UITextField!
     @IBOutlet weak var drinkPref: UITextField!
+    @IBOutlet weak var age: UITextField!
     @IBOutlet weak var results: UITextView?
     
 
@@ -25,7 +26,7 @@ class ViewController: UIViewController {
     
     
     @IBAction func saveResults(_ sender: Any) {
-        let csvLine:String = "\(firstName.text!),\(lastName.text!),\(drinkPref.text!)\n"
+        let csvLine:String = "\(firstName.text!),\(lastName.text!),\(drinkPref.text!),\(age.text!)\n"
         
         let paths = NSSearchPathForDirectoriesInDomains(FileManager.SearchPathDirectory.documentDirectory, FileManager.SearchPathDomainMask.userDomainMask, true)
         let docDir:String=paths[0]
@@ -47,6 +48,7 @@ class ViewController: UIViewController {
         firstName.text = ""
         lastName.text = ""
         drinkPref.text = ""
+        age.text = ""
     }
     
     
